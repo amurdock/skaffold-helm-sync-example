@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1beta13
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+  - image: amurdock/node
+    context: packages/node
+    sync:
+      manual:
+      - src: 'index.js'
+        dest: '.'
+deploy:
+  helm:
+    releases:
+    - name: skaffold-helm-example
+      chartPath: k8s

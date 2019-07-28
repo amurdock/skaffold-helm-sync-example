@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Skaffold helm sync example
+name: skaffold-helm-sync-example
+version: 0.1.0
